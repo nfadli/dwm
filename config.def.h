@@ -25,6 +25,8 @@ static const char *colors[][3]      = {
 
 static const char *const autostart[] = {
 	"xset","r","rate","400","25", NULL,
+	"feh","--bg-scale","/home/mor/dotfiles/src/wall.jpg", NULL,
+	"flameshot", NULL,
 	NULL /* terminate */
 };
 
