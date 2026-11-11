@@ -1,0 +1,12 @@
+# Binary executables
+/dwm
+
+# Object files
+*.o
+
+# Patch artifacts & backups
+*.orig
+*.rej
+
+# Local configuration overrides (Suckless convention)
+/config.h

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Dwm
+Comment=Dynamic tiling Window Manager
+TryExec=dwm
+Exec=dwm
+Type=Xsession
