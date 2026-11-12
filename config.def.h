@@ -26,7 +26,6 @@ static const char *colors[][3]      = {
 
 static const char *const autostart[] = {
 	"xset","r","rate","400","25", NULL,
-	"feh","--bg-scale","/home/mor/dotfiles/src/wall.jpg", NULL,
   "sh", "-c", "while true; do xsetroot -name \"$(date +'%d-%m-%y %H:%M')\"; sleep 2; done", NULL,
 	"flameshot", NULL,
 	NULL /* terminate */
