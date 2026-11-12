@@ -75,6 +75,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *rofi[] = { "rofi","-show","drun", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
+#include "maximize.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_space,  spawn,          {.v = rofi } },
@@ -110,6 +111,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY,												XK_m,      togglemaximize,      {0} },
 };
 
 /* button definitions */
