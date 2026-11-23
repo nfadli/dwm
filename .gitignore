@@ -2,6 +2,5 @@
 dwm
 *.orig
 *.rej
-*.diff
 *~
 *.swp
