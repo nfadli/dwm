@@ -25,11 +25,9 @@ FREETYPEINC = /usr/include/freetype2
 INCS = -I${X11INC} -I${FREETYPEINC}
 LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS}
 
-# flags
-CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
-#CFLAGS   = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
-CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -O3 -march=native -flto ${INCS} ${CPPFLAGS}
-LDFLAGS  = -O3 -march=native -flto ${LIBS}
+CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS} -DNDEBUG
+CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -O3 -march=native -mtune=native -flto -ffast-math -fno-math-errno -fno-trapping-math -fno-stack-protector -fomit-frame-pointer -fno-plt -fstrict-aliasing -ffunction-sections -fdata-sections ${INCS} ${CPPFLAGS}
+LDFLAGS  = -O3 -march=native -flto -fuse-ld=lld -Wl,--lto-O3 -Wl,--gc-sections -Wl,--as-needed -s ${LIBS}
 
 # Solaris
 #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
