@@ -58,9 +58,9 @@ static const int refreshrate =
 
 static const Layout layouts[] = {
     /* symbol     arrange function */
-    {"[]=", tile}, /* first entry is default */
     {"><>", NULL}, /* no layout function means floating behavior */
-    {"[M]", monocle},
+    //{"[]=", tile}, /* first entry is default */
+    //{"[M]", monocle},
 };
 
 /* key definitions */
@@ -103,6 +103,7 @@ void shiftview(const Arg *arg) {
 
   view(&shifted);
 }
+#include "maximize.c"
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
@@ -125,7 +126,7 @@ static const Key keys[] = {
     {MODKEY, XK_Return, zoom, {0}},
     {MODKEY, XK_Tab, view, {0}},
     {MODKEY, XK_q, killclient, {0}},
-    {MODKEY, XK_v, togglefloating, {0}},
+    {MODKEY, XK_m, togglemaximize, {0} },
     {MODKEY, XK_0, view, {.ui = ~0}},
     {MODKEY | ShiftMask, XK_0, tag, {.ui = ~0}},
     {MODKEY, XK_comma, focusmon, {.i = -1}},
